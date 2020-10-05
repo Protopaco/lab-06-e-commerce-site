@@ -9,7 +9,7 @@ test('time to test a function', (expect) => {
     // Set up your arguments and expectations
     const CF201171F067034 = {
         id: 'CF201171F067034',
-        name: 'Black Couture Edition Insulated Jacket',
+        name: 'Black Poldo Dog Couture Edition Insulated Jacket',
         description: 'Sleeveless insulated quilted nylon jacket in black. Stand collar. Press-stud closure at front. Tonal rubberized logo patch, logo plaque, and leash opening at back. Fully lined. Silver-tone hardware.',
         image_src: 'puffy-black.jpg',
         image_alt: 'black puffy dog jacket',
@@ -23,5 +23,5 @@ test('time to test a function', (expect) => {
     const actual = renderProducts(CF201171F067034);
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });
