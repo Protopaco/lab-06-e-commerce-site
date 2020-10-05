@@ -95,7 +95,7 @@ footer {
   }
 
   li {
-      height: 100px;
+      height: 125px;
       display: grid;
       grid-template-columns: 100px auto 28px;
       border: 1px solid black;
@@ -122,11 +122,14 @@ footer {
       font-weight: bolder;
       /* border: 1px solid orange; */
         height: 25px;
+        overflow: hidden;
+
   }
 
   .description{
       font-size: .75em;
       height: 50px;
+      overflow: hidden;
   }
   
   .subheader{
