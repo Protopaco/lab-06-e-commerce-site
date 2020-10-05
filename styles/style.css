@@ -102,8 +102,10 @@ footer {
   }
 
   img {
-      width: 100px;
-      /* border: 1px solid purple; */
+    max-width: 100px;
+    max-height: 100px;
+    align-self: center;
+    justify-self: center;
   }
 
   .text{

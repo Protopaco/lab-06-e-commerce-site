@@ -32,7 +32,7 @@ const CF201171F067037 = {
     id: 'CF201171F067037',
     name: 'Blue Poldo Dog Couture Edition Waterproof Coat',
     description: 'Long sleeve translucent polyurethane coat in blue. Detachable hood with rib knit trim at rib knit stand collar. Press-stud closure at front. Bungee-style drawstring at hem. Rubberized logo patch and logo plaque at back. Unlined. Silver-tone hardware',
-    image_src: 'blue-waterproof-coast.jpg',
+    image_src: 'blue-waterproof-coat.jpg',
     image_alt: 'waterproof dog jacket',
     category: 'canine fashion',
     price: '455'
@@ -48,4 +48,4 @@ const CF201171F067033 = {
     price: '455'
 }
 
-export const canineFashion = [CF201171F067034, CF201171F067035, CF201171F591042, CF201171F067037, CF201171F067033];
+export const canineFashions = [CF201171F067034, CF201171F067035, CF201171F591042, CF201171F067037, CF201171F067033];
