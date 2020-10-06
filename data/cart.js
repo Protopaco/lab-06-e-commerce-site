@@ -1,5 +1,5 @@
 
-export const cart = [
+export const cartArray = [
     {
     id: 'CF201171F067034',
     quantity: 2,

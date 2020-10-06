@@ -144,7 +144,7 @@ const CF201228F067064 ={
     price: '70',
 }
 
-const CF201927F095014 ={
+export const CF201927F095014 ={
     id: 'CF201927F095014',
     name: 'SSENSE Exclusive Grey & Orange Dog Sweater',
     description: 'Sleeveless knit wool sweater in orange featuring check pattern in grey. Rib knit crewneck collar and hem.',
