@@ -21,11 +21,12 @@ export function renderProducts (productObject){
         for (let i = 0; i < productObject.image_list.length; i++){
             let temp_widget = document.createElement('img');
             temp_widget.src = `../assets/${productObject.image_list[i]}`
-            temp_widget.classList.add(`${productObject.id}-image`);
+            //temp_widget.classList.add(`${productObject.id}-image`);
             temp_widget.alt = productObject.image_alt;
             image_widget_list.appendChild(temp_widget);
         }
         li.appendChild(image_widget_list);
+
     } else {
 
         image.src = `../assets/${productObject.image_src}`;

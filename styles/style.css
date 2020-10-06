@@ -105,9 +105,6 @@ footer {
       margin: 5px;
   }
 
-  li:hover {
-      transform: scale(1.01);
-  }
 
   .image-section{
       display: flex;
@@ -168,4 +165,19 @@ footer {
 
   .category {
       color: gray;
+  }
+
+
+  li:hover {
+    transform: scale(1.01);
+    animation-name: changeImage;
+    animation-duration: 1000ms;
+}
+
+
+
+  @keyframes changeImage {
+      0% {display: 'none'}
+      50% {display: 'block'}
+      100% {display: 'none'}
   }

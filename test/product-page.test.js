@@ -4,7 +4,7 @@ import { renderProducts } from '../utils/render-products.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('should return working li object', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const CF201171F067034 = {

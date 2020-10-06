@@ -6,16 +6,15 @@ let carouselList = [];
 
 for (let i = 0; i<canineFashions.length; i++){
     let canineFashion = canineFashions[i];
+
     let liWidget = renderProducts(canineFashion);
     productList.appendChild(liWidget);
-    // console.log(canineFashion);
     if(canineFashion.image_list){
-        let tempClassName = `${canineFashion.id}-image`;
-        carouselList.push(document.getElementsByClassName(tempClassName));
+        //console.log(liWidget.firstChild.children);
+        carouselList.push(liWidget.firstChild.children);
     }
 }
 
-//console.log(carouselList);
 
 var MyIndex = 0;
 carousel();
@@ -23,7 +22,7 @@ carousel();
 function carousel () {
     for (let i = 0; i < carouselList.length; i++)
     {
-        // console.log(carouselList[i][0]);
+       //console.log(carouselList[i][0]);
         for (let j = 0; j < carouselList[i].length; j++) {
             carouselList[i][j].style.display = 'none'
         }
@@ -34,7 +33,49 @@ function carousel () {
     } else {
         MyIndex++;
     }
-        console.log(MyIndex);
-        setTimeout(carousel, 2000);
+        setTimeout(carousel, 2500);
 }
+
+
+
+
+// for (let i = 0; i < carouselList.length; i++) {
+//     carouselList[i].addEventListener('mouseenter', function () {
+//         let imageList = carouselList[i].firstChild.children;
+//         switchImages(imageList);
+//        // console.log(carouselList[i].id);
+//         //console.log(carouselList[i].firstChild.children);
+//         // setTimeout(() => {
+//         //     switchImages(carouselList[i].firstChild.children);
+//         //     console.log('switch!');
+//         // }, 2000);
+//         // //displayCount = 0;
+//         console.log('fuck you');
+//     })
+//     carouselList[i].addEventListener('mouseleave', function () {
+//         displayCount = 0;
+//     })
+// }
+
+// let displayCount = 0;
+
+// function switchImages(imageList) {
+//     for (var i = 0; i < imageList.length; i++){
+//         console.log(i);
+//         if (displayCount === i) {
+//             imageList[i].style.display = 'block';
+//         } else {
+//             imageList[i].style.display = 'none';
+//         }
+//     }
+//     displayCount++;
+//     if (displayCount > imageList.length){
+//         displayCount = 0;
+//     }
+
+
+//     setTimeout( function () {
+//         switchImages(imageList);
+//     }, 2000);
+// }
 
