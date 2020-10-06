@@ -29,3 +29,21 @@ export function renderLineItems(cartObject, productObject){
 
 
 }
+
+export function renderCartTotal(total){
+    const totalTR = document.createElement('tr')
+    const totalTD = document.createElement('td')
+    const dummyTD = document.createElement('td');
+
+    totalTR.classList.add('total-tr');
+
+    totalTD.classList.add('grand-total');
+    totalTD.textContent = `$${total}`;
+
+    dummyTD.classList.add('total-space-fill');
+    dummyTD.colSpan = 3;
+
+    totalTR.append(dummyTD, totalTD);
+
+    return totalTR;
+}
