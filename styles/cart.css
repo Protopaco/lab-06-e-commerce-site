@@ -1,0 +1,26 @@
+table {
+    margin-top: 50px;
+}
+
+#th-name{
+    width: 300px;
+    border-bottom: 2px solid black;
+    margin-right: 20px;
+}
+
+#th-cost{
+    width: 70px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+#th-quant{
+    width: 70px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+#th-total{
+    width: 100px;
+    border-bottom: 2px solid black;
+    text-align: right;
+}
