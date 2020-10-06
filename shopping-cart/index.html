@@ -17,21 +17,53 @@
     </header>
     <main>
         <table id='shopping-cart-table'>
-            <th id='shopping-cart-header'>
-                <td id='th-name'>
+            <tr id='shopping-cart-header'>
+                <th id='th-name'>
                    name
-                </td>
-                <td id='th-cost'>
-                    cost
-                </td>
-                <td id='th-quant'>
-                    quant
-                </td>
-                <td id='th-total'>
+                </th>
+                <th id='th-cost'>
+                    $
+                </th>
+                <th id='th-quant'>
+                    #
+                </th>
+                <th id='th-total'>
                     total
+                </th>
+            </tr>
+
+            <tr class="cart-item">
+                <td class='item, name'>
+                    Dog's puffy coat
                 </td>
-            </th>
+                <td class='item, cost'>
+                    $500
+                </td>
+                <td class='item, quant'>
+                    4
+                </td>
+                <td class='item, total'>
+                    $2000
+                </td>
+            </tr>
+
+            <tr class="cart-item">
+                <td class='item, name'>
+                    Dog's puffy coat
+                </td>
+                <td class='item, cost'>
+                    $500
+                </td>
+                <td class='item, quant'>
+                    4
+                </td>
+                <td class='item, total'>
+                    $2000
+                </td>
+            </tr>
+
         </table>
+        <button id='place-order'>place order</button>
     </main>
     
 </body>
