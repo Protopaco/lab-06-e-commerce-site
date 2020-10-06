@@ -105,12 +105,15 @@ footer {
       margin: 5px;
   }
 
+  .image-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
   img {
     max-width: 90px;
     max-height: 90px;
-    align-self: center;
-    justify-self: center;
-
   }
 
   .text{

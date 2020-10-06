@@ -3,6 +3,7 @@
 export function renderProducts (productObject){
     const li = document.createElement('li');
     const image = document.createElement('img');
+    const image_widget_list = document.createElement('section');
     const textSection = document.createElement('section');
     const pName = document.createElement('p');
     const pDescription = document.createElement('p')
@@ -13,9 +14,26 @@ export function renderProducts (productObject){
 
     li.id = productObject.id;
 
-    image.src = `../assets/${productObject.image_src}`;
-    image.alt = productObject.image_alt;
+    image_widget_list.classList.add('image-section');
 
+
+    if (productObject.image_list){
+        for (let i = 0; i < productObject.image_list.length; i++){
+            let temp_widget = document.createElement('img');
+            temp_widget.src = `../assets/${productObject.image_list[i]}`
+            temp_widget.classList.add(`${productObject.id}-image`);
+            temp_widget.alt = productObject.image_alt;
+            image_widget_list.appendChild(temp_widget);
+        }
+        li.appendChild(image_widget_list);
+    } else {
+
+        image.src = `../assets/${productObject.image_src}`;
+        image.alt = productObject.image_alt;
+        image_widget_list.appendChild(image);
+        li.appendChild(image_widget_list);
+
+    }
     textSection.classList.add('text');
 
     pName.classList.add('name');
@@ -42,11 +60,10 @@ export function renderProducts (productObject){
     textSection.appendChild(pDescription);
     textSection.appendChild(subSection);
 
-    li.appendChild(image);
     li.appendChild(textSection);
     li.appendChild(addButton);
     
-    console.log(li);
+    // console.log(li);
 
     return li;
 }
