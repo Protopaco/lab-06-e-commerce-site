@@ -1,6 +1,10 @@
 import { renderProducts } from '../utils/render-products.js';
-import { canineFashions } from '../data/canine-fashion.js';
+import { canineFashions } from '../data/products.js';
 const productList = document.getElementById('product-list');
+//const productCartQuantDisplay = document.getElementsByClassName('cart-status-display');
+//const addToCartButton = document.getElementsByClassName
+
+
 
 let carouselList = [];
 

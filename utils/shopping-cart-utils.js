@@ -1,19 +1,20 @@
-import { canineFashions } from '../data/canine-fashion.js';
+import { canineFashions } from '../data/products.js';
 import { renderCartTotal, renderLineItems } from './render-line-items.js';
 import { findById } from './find-by-id.js';
 import { calcOrderTotal } from './calc-order-total.js';
+import { getFromLocalStorage } from './add-item-to-cart.js';
+
 
 const table = document.getElementById('shopping-cart-table');
 const clearButton = document.getElementById('clear-cart');
+const placeOrderButton = document.getElementById('place-order');
+
 clearButton.addEventListener('click', clearCart);
+placeOrderButton.addEventListener('click', placeOrder);
 
 
 // opens cartArray from localStorage
-let cartArray = [];
-if (localStorage.getItem('cart')){
-    cartArray = JSON.parse(localStorage.getItem('cart'));
-    console.log(cartArray);
-} 
+let cartArray = getFromLocalStorage();
 
 // loads cart from cartArray
 loadCart(cartArray) 
@@ -33,7 +34,35 @@ function loadCart (cartArray) {
 
 // clears localStorage and reloads the page
 function clearCart() {
+    if ( cartArray.length > 0){
     localStorage.clear('cart');
     cartArray = [];
-   location.reload()
+    location.reload();
+    location.href = '../products/';
+    }
+}
+
+// creates alert stating order, clears 
+function placeOrder() {
+    if (cartArray.length > 0){
+        let output = parseCartArray(cartArray);
+        alert(output);
+        localStorage.clear('cart')
+        location.href = '../products/';
+    }
+}
+
+// translates cart JSON into readable response
+function parseCartArray(cartArray){
+    let lineBreak = '------------\n'
+    let output = lineBreak;
+    for (let item of cartArray){
+        let itemInfo = findById(canineFashions, item.id);
+        let id = `Name: ${itemInfo.name} \n`;        
+        let quantity = `Quantity: ${item.quantity} \n`;
+        output += id + quantity + lineBreak;
+    }
+
+    return output;
+
 }

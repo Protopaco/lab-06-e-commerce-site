@@ -1,4 +1,4 @@
-import { addItemToCart } from './add-item-to-cart.js';
+import { addItemToCart, updateCartQuantity } from './add-item-to-cart.js';
 //import { realCartArray as cartArray } from '../data/cart.js';
 
 export function renderProducts (productObject){
@@ -11,8 +11,12 @@ export function renderProducts (productObject){
     const subSection = document.createElement('section');
     const pCategory = document.createElement('p');
     const pPrice = document.createElement('p');
+    const cartSection = document.createElement('section');
     const addButton = document.createElement('button');
+    const cartStatusDisplay = document.createElement('p');
+    const subtractButton = document.createElement('button');
 
+    let cartQuantity = '';
     li.id = productObject.id;
 
     image_widget_list.classList.add('image-section');
@@ -35,6 +39,7 @@ export function renderProducts (productObject){
         li.appendChild(image_widget_list);
 
     }
+
     textSection.classList.add('text');
 
     pName.classList.add('name');
@@ -51,9 +56,23 @@ export function renderProducts (productObject){
     pPrice.classList.add('price');
     pPrice.textContent = `$${productObject.price}`;
 
-    addButton.classList.add('addToCartButton');
+    cartSection.classList.add('cart-section');
+
+    addButton.classList.add('add-to-cart-button');
     addButton.textContent = '+';
-    addButton.onclick = function () {addItemToCart(productObject.id);};
+    addButton.onclick = function () {
+        cartQuantity = addItemToCart(productObject.id);
+        cartStatusDisplay.textContent = cartQuantity.toString();
+    };
+
+    cartStatusDisplay.classList.add('cart-status-display');
+    //cartStatusDisplay.textContent = cartQuantity;
+
+
+    subtractButton.classList.add('subtract-from-cart-button');
+    subtractButton.textContent = '-';
+    //subtractButton.id = `-${productObject.id}`;
+    subtractButton.onclick = function () {subtractItemFromCart(productObject.id);};
 
     subSection.appendChild(pCategory);
     subSection.appendChild(pPrice);
@@ -62,8 +81,12 @@ export function renderProducts (productObject){
     textSection.appendChild(pDescription);
     textSection.appendChild(subSection);
 
+    cartSection.appendChild(addButton);
+    cartSection.appendChild(cartStatusDisplay);
+    cartSection.appendChild(subtractButton);
+
     li.appendChild(textSection);
-    li.appendChild(addButton);
+    li.appendChild(cartSection);
     
     // console.log(li);
 

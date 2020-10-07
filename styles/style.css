@@ -102,7 +102,7 @@ footer {
   li {
       height: 125px;
       display: grid;
-      grid-template-columns: 100px auto 28px;
+      grid-template-columns: 100px auto 50px;
       box-shadow: var(--shadow-item);
       margin: 5px;
   }
@@ -154,19 +154,24 @@ footer {
       padding-right: 5px;
   }
 
-  .addToCartButton{
+  .add-to-cart-button, .subtract-from-cart-button{
       background-color: black;
       color: white;
-      width: 100%;
-      height: 100%;
       align-self: center;
-      width: 25px;
       padding-right: 3px;
       outline: none;
+      height: 100%;
+      font-size: 1.5em;
+      box-shadow: 1px 1px gray;
   }
-
-  .addToCartButton:active{
-      
+  .add-to-cart-button:active, .subtract-from-cart-button:active{
+        box-shadow: none;
+  }
+  
+  .cart-status-display{
+      font-size: 1.5em;
+      align-self: center;
+      justify-self: center;;
   }
 
   .category {
@@ -184,3 +189,10 @@ footer {
     height: 35px;
     outline: none;
 }
+
+.cart-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 5px;
+}
+
