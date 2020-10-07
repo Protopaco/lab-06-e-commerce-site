@@ -14,3 +14,9 @@ export const cartArray = [
 }
 
 ]
+
+export const testArray = [];
+
+export const realCartArray = [
+
+];
