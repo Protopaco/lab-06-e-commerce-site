@@ -1,8 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { CF201927F095014 } from '../products/canine-fashion.js';
+import { CF201927F095014, canineFashions } from '../data/canine-fashion.js';
 import { findById } from '../utils/find-by-id.js';
-import { canineFashions } from '../products/canine-fashion.js';
 
 const test = QUnit.test;
 
