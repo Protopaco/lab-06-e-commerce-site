@@ -16,7 +16,6 @@ test('time to test a function', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    addItemToCart(testID, cartArray);
     const actual = testArray;
 
     //Expect

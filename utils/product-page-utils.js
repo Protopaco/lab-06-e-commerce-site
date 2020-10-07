@@ -1,5 +1,5 @@
 import { renderProducts } from '../utils/render-products.js';
-import { canineFashions } from '../products/canine-fashion.js';
+import { canineFashions } from '../data/canine-fashion.js';
 const productList = document.getElementById('product-list');
 
 let carouselList = [];
