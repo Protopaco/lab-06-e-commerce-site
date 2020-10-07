@@ -24,6 +24,31 @@ export function addItemToCart(itemID){
 }
 
 export function subtractItemFromCart(itemID){
+    let cartQuantity = '';
+
+    let cartArray = getFromLocalStorage();
+    const itemInCart = findById(cartArray, itemID);
+    if (itemInCart){
+        if (itemInCart.quantity > 1){
+            itemInCart.quantity--;
+            cartQuantity = itemInCart.quantity;
+        } else {
+            cartArray.pop(itemInCart);
+            cartQuantity = '';
+        }
+    }
+    setInLocalStorage(cartArray);
+    console.log(cartQuantity);
+    return cartQuantity;
+}
+
+export function getCartQuantity(itemID) {
+
+    let cartArray = getFromLocalStorage();
+    let itemInCart = findById(cartArray, itemID);
+    if (itemInCart){
+        return itemInCart.quantity;
+    }
 }
 
 

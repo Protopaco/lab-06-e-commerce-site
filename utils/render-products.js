@@ -1,4 +1,4 @@
-import { addItemToCart, updateCartQuantity } from './add-item-to-cart.js';
+import { addItemToCart, subtractItemFromCart, getCartQuantity } from './add-item-to-cart.js';
 //import { realCartArray as cartArray } from '../data/cart.js';
 
 export function renderProducts (productObject){
@@ -16,7 +16,7 @@ export function renderProducts (productObject){
     const cartStatusDisplay = document.createElement('p');
     const subtractButton = document.createElement('button');
 
-    let cartQuantity = '';
+    let cartQuantity = getCartQuantity(productObject.id);
     li.id = productObject.id;
 
     image_widget_list.classList.add('image-section');
@@ -66,13 +66,15 @@ export function renderProducts (productObject){
     };
 
     cartStatusDisplay.classList.add('cart-status-display');
-    //cartStatusDisplay.textContent = cartQuantity;
+    cartStatusDisplay.textContent = cartQuantity;
 
 
     subtractButton.classList.add('subtract-from-cart-button');
     subtractButton.textContent = '-';
-    //subtractButton.id = `-${productObject.id}`;
-    subtractButton.onclick = function () {subtractItemFromCart(productObject.id);};
+    subtractButton.onclick = function () {
+        cartQuantity = subtractItemFromCart(productObject.id);
+        cartStatusDisplay.textContent = cartQuantity.toString();
+    };
 
     subSection.appendChild(pCategory);
     subSection.appendChild(pPrice);
