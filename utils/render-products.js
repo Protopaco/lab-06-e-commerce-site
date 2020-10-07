@@ -1,5 +1,5 @@
 import { addItemToCart } from './add-item-to-cart.js';
-import { realCartArray as cartArray } from '../data/cart.js';
+//import { realCartArray as cartArray } from '../data/cart.js';
 
 export function renderProducts (productObject){
     const li = document.createElement('li');
