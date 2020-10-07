@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+
+
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header>
+        <div class="gutter-right logo">
+            <a href='../products/'>
+            <img src='/assets/dog-logo.png'>
+            </a>
+        </div>
+    </header>
+    <main>
+        <table id='shopping-cart-table'>
+            <tr id='shopping-cart-header'>
+                <th id='th-name'>
+                   name
+                </th>
+                <th id='th-cost'>
+                    $
+                </th>
+                <th id='th-quant'>
+                    #
+                </th>
+                <th id='th-total'>
+                    total
+                </th>
+            </tr>
+
+
+        </table>
+        <button id='place-order'>place order</button>
+        <button id='clear-cart'>clear cart</button>
+    </main>
+    <script type="module" src="../utils/shopping-cart-utils.js"></script>
+
+</body>
+</html>

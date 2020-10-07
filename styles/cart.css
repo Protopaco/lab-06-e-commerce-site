@@ -1,0 +1,64 @@
+table {
+    margin-top: 50px;
+}
+th {
+    height: 5px;
+}
+
+
+#th-name{
+    width: 300px;
+    border-bottom: 2px solid black;
+    margin-right: 20px;
+    text-align: left;
+}
+
+#th-cost, #th-quant{
+    width: 70px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    align-self: flex-end;
+}
+
+#th-total{
+    width: 100px;
+    border-bottom: 2px solid black;
+    text-align: right;
+}
+
+.total-tr, .cart-item{
+    height: 55px;
+}
+
+.cost, .quant{
+    text-align: center;
+    border-bottom: 1px solid black;
+
+}
+
+.total{
+    text-align: right;
+    border-bottom: 1px solid black;
+
+}
+
+.name{
+    border-bottom: 1px solid black;
+
+}
+
+button{
+    background: black;
+    color: white;
+    border: 0;
+    outline: none;
+    height: 30px;
+    width: 200px;
+    align-self: center;
+    margin-top: 50px;
+}
+
+.grand-total{
+    text-align: right;
+}
+

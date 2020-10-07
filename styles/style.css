@@ -62,6 +62,8 @@ h2 {
 
 .gutter-right {
     margin-right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 header img {
@@ -174,10 +176,7 @@ footer {
     animation-duration: 1000ms;
 }
 
-
-
-  @keyframes changeImage {
-      0% {display: 'none'}
-      50% {display: 'block'}
-      100% {display: 'none'}
-  }
+#shopping-cart-icon{
+    height: 35px;
+    outline: none;
+}

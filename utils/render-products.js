@@ -1,4 +1,5 @@
-//import { CF201171F067034 } from '../products/canine-fashion.js';
+import { addItemToCart } from './add-item-to-cart.js';
+import { realCartArray as cartArray } from '../data/cart.js';
 
 export function renderProducts (productObject){
     const li = document.createElement('li');
@@ -21,7 +22,6 @@ export function renderProducts (productObject){
         for (let i = 0; i < productObject.image_list.length; i++){
             let temp_widget = document.createElement('img');
             temp_widget.src = `../assets/${productObject.image_list[i]}`
-            //temp_widget.classList.add(`${productObject.id}-image`);
             temp_widget.alt = productObject.image_alt;
             image_widget_list.appendChild(temp_widget);
         }
@@ -53,6 +53,7 @@ export function renderProducts (productObject){
 
     addButton.classList.add('addToCartButton');
     addButton.textContent = '+';
+    addButton.onclick = function () {addItemToCart(productObject.id);};
 
     subSection.appendChild(pCategory);
     subSection.appendChild(pPrice);
