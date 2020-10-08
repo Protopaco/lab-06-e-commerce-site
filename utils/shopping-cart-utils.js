@@ -1,4 +1,4 @@
-import { canineFashions } from '../data/products.js';
+import { getProductsFromLocalStorage } from './local-storage-utils.js';
 import { renderCartTotal, renderLineItems } from './render-line-items.js';
 import { findById } from './find-by-id.js';
 import { calcOrderTotal } from './calc-order-total.js';
@@ -8,6 +8,8 @@ import { getCartFromLocalStorage } from './local-storage-utils.js';
 const table = document.getElementById('shopping-cart-table');
 const clearButton = document.getElementById('clear-cart');
 const placeOrderButton = document.getElementById('place-order');
+const products = getProductsFromLocalStorage();
+
 
 clearButton.addEventListener('click', clearCart);
 placeOrderButton.addEventListener('click', placeOrder);
@@ -23,11 +25,11 @@ loadCart(cartArray)
 function loadCart (cartArray) {
     for (let cartItem of cartArray) {
 
-        let selectedItem = (findById(canineFashions, cartItem.id));
+        let selectedItem = (findById(products, cartItem.id));
         let generatedTR = renderLineItems(cartItem, selectedItem);
         table.appendChild(generatedTR);
     }
-    const orderTotal = calcOrderTotal(cartArray, canineFashions);
+    const orderTotal = calcOrderTotal(cartArray, products);
     const grandTotalTR = renderCartTotal(orderTotal);
     table.appendChild(grandTotalTR)
 }
@@ -57,7 +59,7 @@ function parseCartArray(cartArray){
     let lineBreak = '------------\n'
     let output = lineBreak;
     for (let item of cartArray){
-        let itemInfo = findById(canineFashions, item.id);
+        let itemInfo = findById(products, item.id);
         let id = `Name: ${itemInfo.name} \n`;        
         let quantity = `Quantity: ${item.quantity} \n`;
         output += id + quantity + lineBreak;

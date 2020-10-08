@@ -1,3 +1,4 @@
+import { canineFashions } from '../data/products.js';
 
 let cartName = 'shopping-cart';
 let productName = 'products';
@@ -13,6 +14,10 @@ export function setCartInLocalStorage(value) {
  
      return ( temp ? temp : []);
          
+ }
+
+ export function seedHardProducts() {
+     localStorage.setItem(productName, JSON.stringify(canineFashions));
  }
 
  export function setProductsInLocalStorage(value) {

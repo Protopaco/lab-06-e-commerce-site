@@ -1,12 +1,16 @@
 import { addProduct } from './add-remove-product-utils.js';
+import { renderProductsAdmin } from './render-products-admin.js';
+import { getProductsFromLocalStorage } from './local-storage-utils.js';
 
 const addProductForm = document.getElementById('new-product-form');
+const currentProductsList = document.getElementById("listed-products");
+currentProductsList.classList.add('current-products-list');
 
 addProductForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const newProductObject = {
         id: addProductForm.id.value,
-        label: addProductForm.name.value,
+        name: addProductForm.name.value,
         description: addProductForm.description.value,
         img_src: addProductForm.img.value,
         img_alt: addProductForm.img_alt.value,
@@ -17,3 +21,10 @@ addProductForm.addEventListener('submit', (e) => {
     addProductForm.reset();
 
 })
+
+
+let productObjects = getProductsFromLocalStorage();
+for (let product of productObjects){
+    const renderedProduct = renderProductsAdmin(product);
+    currentProductsList.appendChild(renderedProduct);
+}

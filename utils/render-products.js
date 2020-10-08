@@ -33,8 +33,11 @@ export function renderProducts (productObject){
         li.appendChild(image_widget_list);
 
     } else {
-
         image.src = `../assets/${productObject.image_src}`;
+
+        if (`../assets/${productObject.image_src}` === '../assets/undefined'){
+            image.src = `https://www.placecage.com/100/150`
+        }
         image.alt = productObject.image_alt;
         image_widget_list.appendChild(image);
         li.appendChild(image_widget_list);
