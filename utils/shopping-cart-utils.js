@@ -2,7 +2,7 @@ import { canineFashions } from '../data/products.js';
 import { renderCartTotal, renderLineItems } from './render-line-items.js';
 import { findById } from './find-by-id.js';
 import { calcOrderTotal } from './calc-order-total.js';
-import { getFromLocalStorage } from './local-storage-utils.js';
+import { getCartFromLocalStorage } from './local-storage-utils.js';
 
 
 const table = document.getElementById('shopping-cart-table');
@@ -14,7 +14,7 @@ placeOrderButton.addEventListener('click', placeOrder);
 
 
 // opens cartArray from localStorage
-let cartArray = getFromLocalStorage();
+let cartArray = getCartFromLocalStorage();
 
 // loads cart from cartArray
 loadCart(cartArray) 
