@@ -5,6 +5,7 @@ import { getProductsFromLocalStorage } from './local-storage-utils.js';
 const addProductForm = document.getElementById('new-product-form');
 const currentProductsList = document.getElementById("listed-products");
 currentProductsList.classList.add('current-products-list');
+resetAdminProductList();
 
 addProductForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -19,12 +20,14 @@ addProductForm.addEventListener('submit', (e) => {
     }
     addProduct(newProductObject);
     addProductForm.reset();
-
+    resetAdminProductList();
 })
 
-
-let productObjects = getProductsFromLocalStorage();
-for (let product of productObjects){
-    const renderedProduct = renderProductsAdmin(product);
-    currentProductsList.appendChild(renderedProduct);
+export function resetAdminProductList () {
+    currentProductsList.innerHTML = '';
+    let productObjects = getProductsFromLocalStorage();
+    for (let product of productObjects){
+        const renderedProduct = renderProductsAdmin(product);
+        currentProductsList.appendChild(renderedProduct);
+    }
 }

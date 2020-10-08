@@ -1,3 +1,4 @@
+import { removeProduct } from './add-remove-product-utils.js';
 
 export function renderProductsAdmin(productObject) {
 
@@ -23,6 +24,9 @@ export function renderProductsAdmin(productObject) {
 
     removeButton.classList.add('remove-button');
     removeButton.textContent = 'remove';
+    removeButton.onclick = function () {
+        removeProduct(productObject);
+    }
 
     productLI.appendChild(img);
     productLI.appendChild(name);

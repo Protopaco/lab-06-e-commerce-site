@@ -23,7 +23,7 @@ form *, .label{
 }
 
 #current-products-section{
-    height: 50%;
+    height: 60%;
     overflow: scroll;
 }
 
