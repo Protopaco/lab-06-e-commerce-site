@@ -1,5 +1,5 @@
-import { addItemToCart, subtractItemFromCart, getCartQuantity } from './add-item-to-cart.js';
-//import { realCartArray as cartArray } from '../data/cart.js';
+import { addItemToCart, subtractItemFromCart, getCartQuantity, selectionNumberInCart } from './add-remove-from-cart.js';
+//import { createDropDownMenu } from './create-drop-down-menu.js';
 
 export function renderProducts (productObject){
     const li = document.createElement('li');
@@ -15,7 +15,8 @@ export function renderProducts (productObject){
     const addButton = document.createElement('button');
     const cartStatusDisplay = document.createElement('p');
     const subtractButton = document.createElement('button');
-
+    
+    //let dropDownDiv = createDropDownMenu();
     let cartQuantity = getCartQuantity(productObject.id);
     li.id = productObject.id;
 
@@ -61,12 +62,24 @@ export function renderProducts (productObject){
     addButton.classList.add('add-to-cart-button');
     addButton.textContent = '+';
     addButton.onclick = function () {
+        //dropDownDiv.style.display = 'block';
         cartQuantity = addItemToCart(productObject.id);
         cartStatusDisplay.textContent = cartQuantity.toString();
+        //cartStatusDisplay.appendChild(dropDownDiv);
     };
 
+    //cartStatusDisplay.appendChild(dropDownDiv);
     cartStatusDisplay.classList.add('cart-status-display');
-    cartStatusDisplay.textContent = cartQuantity;
+    cartStatusDisplay.innerText = cartQuantity;
+    // cartStatusDisplay.onclick = function () {
+    //     cartStatusDisplay.childNodes[1].style.display = 'block';
+    //     console.log(cartStatusDisplay.childNodes[1].style.display);
+    // }
+
+    // cartStatusDisplay.onmouseleave = function () {
+    //     dropDownDiv.style.display = 'none';
+    // }
+
 
 
     subtractButton.classList.add('subtract-from-cart-button');
@@ -74,6 +87,7 @@ export function renderProducts (productObject){
     subtractButton.onclick = function () {
         cartQuantity = subtractItemFromCart(productObject.id);
         cartStatusDisplay.textContent = cartQuantity.toString();
+        //cartStatusDisplay.append.dropDownDiv;
     };
 
     subSection.appendChild(pCategory);
@@ -83,14 +97,15 @@ export function renderProducts (productObject){
     textSection.appendChild(pDescription);
     textSection.appendChild(subSection);
 
+    //cartStatusDisplay.appendChild(dropDownDiv);
+
     cartSection.appendChild(addButton);
+    
     cartSection.appendChild(cartStatusDisplay);
     cartSection.appendChild(subtractButton);
 
     li.appendChild(textSection);
     li.appendChild(cartSection);
-    
-    // console.log(li);
 
     return li;
 }

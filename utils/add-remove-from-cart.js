@@ -1,4 +1,5 @@
 import { findById } from "./find-by-id.js";
+import { setInLocalStorage, getFromLocalStorage } from "./local-storage-utils.js";
 
 let cartName = 'shopping-cart';
 
@@ -23,6 +24,22 @@ export function addItemToCart(itemID){
     return cartQuantity;
 }
 
+export function selectionNumberInCart(itemID, quantity){
+
+    let cartArray = getFromLocalStorage();
+    const itemInCart = findById(cartArray, itemID);
+    if (itemInCart) {
+        itemInCart.quantity = quantity;
+    } else {
+        let newCartItem = {
+            id: itemID,
+            quantity: quantity
+        }
+        cartArray.push(newCartItem);
+    }
+    setInLocalStorage(cartArray);
+}
+
 export function subtractItemFromCart(itemID){
     let cartQuantity = '';
 
@@ -38,7 +55,6 @@ export function subtractItemFromCart(itemID){
         }
     }
     setInLocalStorage(cartArray);
-    console.log(cartQuantity);
     return cartQuantity;
 }
 
@@ -49,17 +65,5 @@ export function getCartQuantity(itemID) {
     if (itemInCart){
         return itemInCart.quantity;
     }
-}
-
-
-export function setInLocalStorage(value) {
-   localStorage.setItem(cartName, JSON.stringify(value));
-}
-
-
-export function getFromLocalStorage() {
-    let temp = JSON.parse(localStorage.getItem(cartName));
-
-    return ( temp ? temp : []);
-        
+    return '';
 }
