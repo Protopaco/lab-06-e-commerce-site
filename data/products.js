@@ -25,7 +25,6 @@ const CF201171F067035 = {
         'striped-jacket3.jpg',
         'striped-jacket4.jpg',
     ],
-
     image_alt: 'striped puffy dog jacket',
     category: 'canine fashion',
     price: '575'

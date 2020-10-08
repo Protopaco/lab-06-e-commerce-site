@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 500px;
+    border: 1px solid green;
+    text-align: right;
+}
+
+form *, .label{
+    margin: 10px;
+    align-self: top;
+}
