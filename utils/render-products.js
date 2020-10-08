@@ -1,5 +1,5 @@
-import { addItemToCart } from './add-item-to-cart.js';
-//import { realCartArray as cartArray } from '../data/cart.js';
+import { addItemToCart, subtractItemFromCart, getCartQuantity, selectionNumberInCart } from './add-remove-from-cart.js';
+//import { createDropDownMenu } from './create-drop-down-menu.js';
 
 export function renderProducts (productObject){
     const li = document.createElement('li');
@@ -11,8 +11,13 @@ export function renderProducts (productObject){
     const subSection = document.createElement('section');
     const pCategory = document.createElement('p');
     const pPrice = document.createElement('p');
+    const cartSection = document.createElement('section');
     const addButton = document.createElement('button');
-
+    const cartStatusDisplay = document.createElement('p');
+    const subtractButton = document.createElement('button');
+    
+    //let dropDownDiv = createDropDownMenu();
+    let cartQuantity = getCartQuantity(productObject.id);
     li.id = productObject.id;
 
     image_widget_list.classList.add('image-section');
@@ -35,6 +40,7 @@ export function renderProducts (productObject){
         li.appendChild(image_widget_list);
 
     }
+
     textSection.classList.add('text');
 
     pName.classList.add('name');
@@ -51,9 +57,38 @@ export function renderProducts (productObject){
     pPrice.classList.add('price');
     pPrice.textContent = `$${productObject.price}`;
 
-    addButton.classList.add('addToCartButton');
+    cartSection.classList.add('cart-section');
+
+    addButton.classList.add('add-to-cart-button');
     addButton.textContent = '+';
-    addButton.onclick = function () {addItemToCart(productObject.id);};
+    addButton.onclick = function () {
+        //dropDownDiv.style.display = 'block';
+        cartQuantity = addItemToCart(productObject.id);
+        cartStatusDisplay.textContent = cartQuantity.toString();
+        //cartStatusDisplay.appendChild(dropDownDiv);
+    };
+
+    //cartStatusDisplay.appendChild(dropDownDiv);
+    cartStatusDisplay.classList.add('cart-status-display');
+    cartStatusDisplay.innerText = cartQuantity;
+    // cartStatusDisplay.onclick = function () {
+    //     cartStatusDisplay.childNodes[1].style.display = 'block';
+    //     console.log(cartStatusDisplay.childNodes[1].style.display);
+    // }
+
+    // cartStatusDisplay.onmouseleave = function () {
+    //     dropDownDiv.style.display = 'none';
+    // }
+
+
+
+    subtractButton.classList.add('subtract-from-cart-button');
+    subtractButton.textContent = '-';
+    subtractButton.onclick = function () {
+        cartQuantity = subtractItemFromCart(productObject.id);
+        cartStatusDisplay.textContent = cartQuantity.toString();
+        //cartStatusDisplay.append.dropDownDiv;
+    };
 
     subSection.appendChild(pCategory);
     subSection.appendChild(pPrice);
@@ -62,10 +97,15 @@ export function renderProducts (productObject){
     textSection.appendChild(pDescription);
     textSection.appendChild(subSection);
 
-    li.appendChild(textSection);
-    li.appendChild(addButton);
+    //cartStatusDisplay.appendChild(dropDownDiv);
+
+    cartSection.appendChild(addButton);
     
-    // console.log(li);
+    cartSection.appendChild(cartStatusDisplay);
+    cartSection.appendChild(subtractButton);
+
+    li.appendChild(textSection);
+    li.appendChild(cartSection);
 
     return li;
 }

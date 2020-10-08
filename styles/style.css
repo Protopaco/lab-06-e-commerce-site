@@ -102,7 +102,7 @@ footer {
   li {
       height: 125px;
       display: grid;
-      grid-template-columns: 100px auto 28px;
+      grid-template-columns: 100px auto 50px;
       box-shadow: var(--shadow-item);
       margin: 5px;
   }
@@ -154,19 +154,28 @@ footer {
       padding-right: 5px;
   }
 
-  .addToCartButton{
+  .add-to-cart-button, .subtract-from-cart-button{
       background-color: black;
       color: white;
-      width: 100%;
-      height: 100%;
       align-self: center;
-      width: 25px;
       padding-right: 3px;
       outline: none;
+      height: 100%;
+      width: 50px;
+      font-size: 1.5em;
+      box-shadow: 1px 1px gray;
   }
-
-  .addToCartButton:active{
-      
+  .add-to-cart-button:active, .subtract-from-cart-button:active{
+        box-shadow: none;
+  }
+  
+  .cart-status-display{
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
   }
 
   .category {
@@ -183,4 +192,37 @@ footer {
 #shopping-cart-icon{
     height: 35px;
     outline: none;
+}
+
+.cart-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.drop-down-div{
+    display: none;
+    margin: 0;
+    background-color: green;
+    height: 100%;
+    width: 100%;
+}
+
+.drop-down-content{
+    background-color: white;
+    color: black;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    margin: 0;
+}
+
+.drop-down-content:hover{
+    background-color: lightgray;
+}
+
+.show{
+    display: block;
 }

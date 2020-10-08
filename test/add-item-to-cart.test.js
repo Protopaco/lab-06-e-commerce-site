@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { addItemToCart } from '../utils/add-item-to-cart.js';
+import { addItemToCart } from '../utils/add-remove-from-cart.js';
 import { cartArray, testArray } from '../data/cart.js';
 
 const test = QUnit.test;
