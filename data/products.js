@@ -25,7 +25,6 @@ const CF201171F067035 = {
         'striped-jacket3.jpg',
         'striped-jacket4.jpg',
     ],
-
     image_alt: 'striped puffy dog jacket',
     category: 'canine fashion',
     price: '575'
@@ -96,7 +95,7 @@ const CF201937F067157 ={
 }
 
 const CF201967F067184 ={
-    id: '201967F067184',
+    id: 'CF201967F067184',
     name: 'Orange VIP Edition Dog Raincoat',
     description: 'Long sleeve transparent PVC raincoat in orange. Press-stud closure at front. Elasticized trim featuring jacquard logo pattern in white at cuffs. Leash opening at back collar. Textile logo patch in black at back. Black hardware.',
     image_src: 'orange-vip-raincoat.jpg',

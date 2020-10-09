@@ -1,5 +1,5 @@
 import { findById } from "./find-by-id.js";
-import { setInLocalStorage, getFromLocalStorage } from "./local-storage-utils.js";
+import { setCartInLocalStorage, getCartFromLocalStorage } from "./local-storage-utils.js";
 
 let cartName = 'shopping-cart';
 
@@ -7,7 +7,7 @@ let cartName = 'shopping-cart';
 export function addItemToCart(itemID){
     let cartQuantity = 0;
 
-    let cartArray = getFromLocalStorage();
+    let cartArray = getCartFromLocalStorage();
     const itemInCart = findById(cartArray, itemID);
     if (itemInCart) {
         itemInCart.quantity++
@@ -20,7 +20,7 @@ export function addItemToCart(itemID){
         cartArray.push(newCartItem);
         cartQuantity = 1;
     }
-    setInLocalStorage(cartArray);
+    setCartInLocalStorage(cartArray);
     return cartQuantity;
 }
 
@@ -37,13 +37,13 @@ export function selectionNumberInCart(itemID, quantity){
         }
         cartArray.push(newCartItem);
     }
-    setInLocalStorage(cartArray);
+    setCartInLocalStorage(cartArray);
 }
 
 export function subtractItemFromCart(itemID){
     let cartQuantity = '';
 
-    let cartArray = getFromLocalStorage();
+    let cartArray = getCartFromLocalStorage();
     const itemInCart = findById(cartArray, itemID);
     if (itemInCart){
         if (itemInCart.quantity > 1){
@@ -54,13 +54,13 @@ export function subtractItemFromCart(itemID){
             cartQuantity = '';
         }
     }
-    setInLocalStorage(cartArray);
+    setCartInLocalStorage(cartArray);
     return cartQuantity;
 }
 
 export function getCartQuantity(itemID) {
 
-    let cartArray = getFromLocalStorage();
+    let cartArray = getCartFromLocalStorage();
     let itemInCart = findById(cartArray, itemID);
     if (itemInCart){
         return itemInCart.quantity;

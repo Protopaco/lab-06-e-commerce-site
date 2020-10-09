@@ -1,19 +1,24 @@
 import { renderProducts } from '../utils/render-products.js';
-import { canineFashions } from '../data/products.js';
+import { seedHardProducts, getProductsFromLocalStorage } from './local-storage-utils.js';
 const productList = document.getElementById('product-list');
 //const productCartQuantDisplay = document.getElementsByClassName('cart-status-display');
 //const addToCartButton = document.getElementsByClassName
 
-
+if (getProductsFromLocalStorage().length === 0){
+    console.log('empty');
+    seedHardProducts();
+} 
+const products = getProductsFromLocalStorage();
+console.log(products);
 
 let carouselList = [];
 
-for (let i = 0; i<canineFashions.length; i++){
-    let canineFashion = canineFashions[i];
+for (let i = 0; i<products.length; i++){
+    let product = products[i];
 
-    let liWidget = renderProducts(canineFashion);
+    let liWidget = renderProducts(product);
     productList.appendChild(liWidget);
-    if(canineFashion.image_list){
+    if(product.image_list){
         carouselList.push(liWidget.firstChild.children);
     }
 }

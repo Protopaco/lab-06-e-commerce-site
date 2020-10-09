@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/product-entry.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+
+    <title>product entry</title>
+</head>
+<body>
+    <header>
+        <a href="../">
+            <img src="../assets/dog-logo.png">
+        </a>
+    </header>
+    <section id="form-section"> 
+    <form id="new-product-form">
+        <label class="label" for="id">id #:</label>
+        <input type="number" id="id" required>
+
+        <label class="label" for="name">product name:</label>
+        <input type="text" id="name" required>
+
+        <label class="label" for="description">description:</label>
+        <input type="text" id="description" required>
+
+        <label class="label" for="img">image filename:</label>
+        <input type="text" id="img" required>
+
+        <label class="label" for="img_alt">image description:</label>
+        <input type="text" id="img_alt" required>
+
+        <label class="label" for="price">price:</label>
+        <input type="number" id="price" required>
+
+        <label class="label" for="category">category</label>
+        <select id="category">
+            <option id="canine">canine fashions</option>
+            <option id="feline">feline fashions</option>
+        </select>
+        <dummy></dummy>
+        <button id="submit">submit</button>
+
+    </form>
+    </section> 
+ 
+    <hr>
+
+    <section id="current-products-section">
+    <ul id="listed-products">
+
+    </ul>
+    </section>
+
+    <script type="module" src="../utils/admin-utils.js"></script>
+
+</body>
+</html>

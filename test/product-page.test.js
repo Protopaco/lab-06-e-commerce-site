@@ -19,7 +19,7 @@ test('should return working li object', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const expected = '<li id="CF201171F067034"><section class="image-section"><img src="../assets/puffy-black.jpg" alt="black puffy dog jacket"></section><section class="text"><p class="name">Black Poldo Dog Couture Edition Insulated Jacket</p><p class="description">Sleeveless insulated quilted nylon jacket in black. Stand collar. Press-stud closure at front. Tonal rubberized logo patch, logo plaque, and leash opening at back. Fully lined. Silver-tone hardware.</p><section class="subheader"><p class="category">canine fashion</p><p class="price">$455</p></section></section><button class="addToCartButton">+</button></li>';
+    const expected = '<li id=\"CF201171F067034\"><section class=\"image-section\"><img src=\"../assets/puffy-black.jpg\" alt=\"black puffy dog jacket\"></section><section class=\"text\"><p class=\"name\">Black Poldo Dog Couture Edition Insulated Jacket</p><p class=\"description\">Sleeveless insulated quilted nylon jacket in black. Stand collar. Press-stud closure at front. Tonal rubberized logo patch, logo plaque, and leash opening at back. Fully lined. Silver-tone hardware.</p><section class=\"subheader\"><p class=\"category\">canine fashion</p><p class=\"price\">$455</p></section></section><section class=\"cart-section\"><button class=\"add-to-cart-button\">+</button><p class=\"cart-status-display\"></p><button class=\"subtract-from-cart-button\">-</button></section></li>';
     const actual = renderProducts(CF201171F067034);
     //Expect
     // Make assertions about what is expected versus the actual result
