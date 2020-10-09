@@ -1,4 +1,6 @@
 import { removeProduct } from './add-remove-product-utils.js';
+import { resetAdminProductList } from './admin-utils.js';
+
 
 export function renderProductsAdmin(productObject) {
 
@@ -26,6 +28,8 @@ export function renderProductsAdmin(productObject) {
     removeButton.textContent = 'remove';
     removeButton.onclick = function () {
         removeProduct(productObject);
+        resetAdminProductList();
+
     }
 
     productLI.appendChild(img);

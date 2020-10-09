@@ -5,7 +5,7 @@ import { cartArray, testArray } from '../data/cart.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('test', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const testID = 'CF201171F067035';
