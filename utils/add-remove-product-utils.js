@@ -1,5 +1,4 @@
 import { getProductsFromLocalStorage, setProductsInLocalStorage } from './local-storage-utils.js';
-import { resetAdminProductList } from './admin-utils.js';
 
 export function addProduct(productObject){
     let exisitingProducts = getProductsFromLocalStorage();
@@ -18,5 +17,4 @@ export function removeProduct(productObject){
         }
     }
     setProductsInLocalStorage(newProducts);
-    resetAdminProductList();
 }
