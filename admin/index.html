@@ -11,25 +11,30 @@
     <title>product entry</title>
 </head>
 <body>
+    <header>
+        <a href="../">
+            <img src="../assets/dog-logo.png">
+        </a>
+    </header>
     <section id="form-section"> 
     <form id="new-product-form">
         <label class="label" for="id">id #:</label>
-        <input type="number" id="id">
+        <input type="number" id="id" required>
 
         <label class="label" for="name">product name:</label>
-        <input type="text" id="name">
+        <input type="text" id="name" required>
 
         <label class="label" for="description">description:</label>
-        <input type="text" id="description">
+        <input type="text" id="description" required>
 
         <label class="label" for="img">image filename:</label>
-        <input type="text" id="img">
+        <input type="text" id="img" required>
 
         <label class="label" for="img_alt">image description:</label>
-        <input type="text" id="img_alt">
+        <input type="text" id="img_alt" required>
 
         <label class="label" for="price">price:</label>
-        <input type="number" id="price">
+        <input type="number" id="price" required>
 
         <label class="label" for="category">category</label>
         <select id="category">

@@ -13,7 +13,10 @@ export function setCartInLocalStorage(value) {
      let temp = JSON.parse(localStorage.getItem(cartName));
  
      return ( temp ? temp : []);
-         
+ }
+
+ export function deleteCartFromLocalStorage() {
+     localStorage.removeItem(cartName);
  }
 
  export function seedHardProducts() {

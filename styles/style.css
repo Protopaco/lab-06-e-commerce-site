@@ -41,7 +41,7 @@ main {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
@@ -60,6 +60,11 @@ h2 {
     font-weight: bold;
 }
 
+.gutter-right {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
 .gutter-right {
     margin-right: 20px;
     display: flex;

@@ -13,7 +13,6 @@ addProductForm.addEventListener('submit', (e) => {
         id: addProductForm.id.value,
         name: addProductForm.name.value,
         description: addProductForm.description.value,
-        img_src: addProductForm.img.value,
         img_alt: addProductForm.img_alt.value,
         price: addProductForm.price.value,
         category: addProductForm.category.value,

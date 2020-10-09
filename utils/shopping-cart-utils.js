@@ -2,7 +2,7 @@ import { getProductsFromLocalStorage } from './local-storage-utils.js';
 import { renderCartTotal, renderLineItems } from './render-line-items.js';
 import { findById } from './find-by-id.js';
 import { calcOrderTotal } from './calc-order-total.js';
-import { getCartFromLocalStorage } from './local-storage-utils.js';
+import { getCartFromLocalStorage, deleteCartFromLocalStorage } from './local-storage-utils.js';
 
 
 const table = document.getElementById('shopping-cart-table');
@@ -37,7 +37,7 @@ function loadCart (cartArray) {
 // clears localStorage and reloads the page
 function clearCart() {
     if ( cartArray.length > 0){
-    localStorage.clear('cart');
+    deleteCartFromLocalStorage();
     cartArray = [];
     location.reload();
     location.href = '../products/';
@@ -49,7 +49,7 @@ function placeOrder() {
     if (cartArray.length > 0){
         let output = parseCartArray(cartArray);
         alert(output);
-        localStorage.clear('cart')
+        deleteCartFromLocalStorage();
         location.href = '../products/';
     }
 }

@@ -10,7 +10,13 @@ export function addProduct(productObject){
 
 export function removeProduct(productObject){
     let exisitingProducts = getProductsFromLocalStorage();
-    exisitingProducts.pop(productObject);
-    setProductsInLocalStorage(exisitingProducts);
+    let newProducts = [];
+    for (let product of exisitingProducts){
+        if (product.id != productObject.id)
+        {
+            newProducts.push(product);
+        }
+    }
+    setProductsInLocalStorage(newProducts);
     resetAdminProductList();
 }

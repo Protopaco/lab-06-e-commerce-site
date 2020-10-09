@@ -10,11 +10,11 @@ export function renderProductsAdmin(productObject) {
 
     productLI.classList.add('product-list-item')
     img.classList.add('admin-img');
+    img.src = `../assets/${productObject.image_src}`;
+    
     if (`../assets/${productObject.image_src}` === '../assets/undefined'){
         img.src = `https://www.placecage.com/100/150`
-    } else {
-        img.src = `../assets/${productObject.image_src}`;
-    }
+    } 
     
     name.classList.add('admin-name');
     name.textContent = productObject.name;
